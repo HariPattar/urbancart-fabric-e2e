@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+generator/output/
+*.parquet
+*.csv
+.DS_Store
