@@ -1,0 +1,74 @@
+project:
+  name: "UrbanCart Omnichannel Retail"
+  seed: 42
+  currency: "INR"
+  start_date: "2025-05-01"
+  end_date: "2026-11-13"
+  output_dir: "generator/output"
+
+scale:
+  stores: 50
+  products: 2000
+  customers: 100000
+  promotions: 40
+  daily_orders_base: 4500
+
+regions:
+  West: ["Mumbai", "Thane", "Pune", "Ahmedabad", "Surat", "Nagpur"]
+  North: ["Delhi-NCR", "Jaipur", "Chandigarh", "Lucknow", "Noida", "Gurugram"]
+  South: ["Bengaluru", "Hyderabad", "Chennai", "Kochi", "Coimbatore", "Mysuru"]
+  East: ["Kolkata", "Bhubaneswar", "Guwahati", "Patna", "Ranchi"]
+
+categories:
+  Apparel:
+    subcategories: ["Ethnic Wear", "Western Casual", "Formal Wear", "Activewear"]
+    margin_range: [0.42, 0.58]
+    price_range: [499, 4999]
+  Footwear:
+    subcategories: ["Sneakers", "Formal Shoes", "Ethnic Juttis", "Sandals"]
+    margin_range: [0.38, 0.50]
+    price_range: [699, 5999]
+  Accessories:
+    subcategories: ["Handbags", "Watches", "Sunglasses", "Belts & Wallets"]
+    margin_range: [0.45, 0.65]
+    price_range: [299, 3999]
+  Home_Living:
+    subcategories: ["Bedsheets", "Festive Decor", "Kitchenware", "Cushions"]
+    margin_range: [0.35, 0.48]
+    price_range: [399, 6999]
+  Electronics_Lifestyle:
+    subcategories: ["TWS Earbuds", "Smartwatches", "Powerbanks", "Grooming Kits"]
+    margin_range: [0.22, 0.32]
+    price_range: [999, 9999]
+
+seasonality:
+  weekend_multiplier: 1.45
+  festivals:
+    - name: "Independence_Day_Sale"
+      start: "2025-08-10"
+      end: "2025-08-17"
+      multiplier: 1.85
+    - name: "Diwali_Festive_Rush_2025"
+      start: "2025-10-12"
+      end: "2025-10-26"
+      multiplier: 2.80
+    - name: "Winter_EOSS_2026"
+      start: "2026-01-02"
+      end: "2026-01-15"
+      multiplier: 1.95
+    - name: "Republic_Day_Sale_2026"
+      start: "2026-01-22"
+      end: "2026-01-28"
+      multiplier: 1.75
+    - name: "Monsoon_EOSS_2026"
+      start: "2026-07-01"
+      end: "2026-07-12"
+      multiplier: 1.80
+    - name: "Diwali_Festive_Rush_2026"
+      start: "2026-10-25"
+      end: "2026-11-10"
+      multiplier: 2.90
+
+data_quality_injection:
+  dirty_row_rate: 0.005  # 0.5% bad rows routed to silver_quarantine
+  duplicate_rate: 0.002  # 0.2% duplicate event_ids
